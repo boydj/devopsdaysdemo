@@ -1,0 +1,9 @@
+version: '2'
+services:
+    web:
+        image: dockercloud/hello-world
+        ports:
+            - 26000:80
+        environment:
+            - reschedule:on-node-failure
+            - affinity:container!=demo_web_*
